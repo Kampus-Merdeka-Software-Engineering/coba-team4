@@ -1,0 +1,383 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: #004d40;
+    color: white;
+    padding: 20px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+nav {
+    width: calc(100% - 40px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.logo span {
+    color: white;
+}
+
+.logo span:nth-child(1) {
+    color: #FEBA01;
+    margin-right: 5px;
+}
+
+.menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.menu li {
+    margin: 0 10px;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.menu a:hover,
+.menu a.active {
+    border-bottom: 2px solid #FEBA01;
+}
+
+.menu-icon {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 25px;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.menu-icon span {
+    display: block;
+    height: 4px;
+    background-color: white;
+    border-radius: 2px;
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+#menu-toggle {
+    display: none;
+}
+
+#menu-toggle:checked + .menu-icon span:nth-child(1) {
+    transform: translateY(10px) rotate(45deg);
+}
+
+#menu-toggle:checked + .menu-icon span:nth-child(2) {
+    opacity: 0;
+}
+
+#menu-toggle:checked + .menu-icon span:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
+}
+
+.hero {
+    background-image: url('https://www.tcnvending.com.au/wp-content/uploads/2020/03/vending-machines-for-sale-sydney.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 0 20px;
+}
+
+.hero-text {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.hero h1 {
+    font-size: 2.5em;
+    margin: 0;
+}
+
+.hero p {
+    margin: 10px 0;
+}
+
+.btn {
+    background-color: #FEBA01;
+    color: black;
+    padding: 5px 10px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.btn:hover {
+    background-color: #fdd835;
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .menu {
+        display: none;
+        flex-direction: column;
+        position: fixed;
+        top: 50px;
+        left: 0;
+        width: 100%;
+        background-color: #004d40;
+        padding: 20px;
+    }
+
+    .menu li {
+        margin: 10px 0;
+    }
+
+    #menu-toggle:checked + .menu-icon + .menu {
+        display: flex;
+    }
+
+    .menu-icon {
+        display: flex;
+    }
+
+    .promotion {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .promotion-text, .promotion-image {
+        max-width: 100%;
+    }
+
+    .promotion-details {
+        flex-direction: column;
+    }
+
+    .detail {
+        margin: 10px 0;
+    }
+
+    main {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #request-data {
+        padding-top: 10px !important;
+        flex-direction: column !important;
+    }
+
+    #request-data form {
+        width: 100% !important;
+        margin: 0 20px;
+        box-sizing: border-box;
+    }
+
+    .promotion-text {
+        margin-bottom: 20px;
+    }
+
+    #profil {
+        padding: inherit !important;
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+
+    #profil .container {
+        flex-direction: row !important;
+    }
+}
+
+section {
+    padding: 50px 20px;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    gap: 25px;
+}
+
+.chart-card {
+    color: #1a3b2f;
+    background: white;
+    border: 1px solid #1a3b2f;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    padding: 40px 20px;
+    box-sizing: border-box;
+    max-height: calc(100vh - 200px);
+}
+
+.chart-card h2 {
+    margin-top: 0;
+    margin-bottom: 0px;
+}
+
+.chart-card p {
+    margin-top: 5px;
+    margin-bottom: 30px;
+}
+
+canvas {
+    width: 100% !important;
+    max-height: 200px;
+}
+
+#request-data {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #6d9773;
+    height: fit-content;
+}
+
+#request-data form {
+    width: 50%;
+    padding: 20px;
+    border: 1px solid white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#request-data form table {
+    width: 100%;
+}
+
+td div {
+    display: flex;
+    flex-direction: column;
+}
+
+td div label {
+    color: #f7ba2f;
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+td div input,
+td div select {
+    padding: 10px 10px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+footer {
+    background-color: #004d40;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    bottom: 0;
+    width: 100%;
+}
+
+.media-profile {
+    height: 175px;
+    width: 150px;
+    border-radius: 25px;
+    background-color: #6d9773;
+}
+
+#profil {
+    padding: 60px 200px;
+    box-sizing: border-box;
+    height: fit-content;
+}
+
+#profil .container {
+    margin-top: 30px;
+}
+
+.promotion {
+    height: fit-content;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    background: linear-gradient(135deg, #1a1a1a, #333);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    margin: 20px;
+    box-sizing: border-box;
+    color: white;
+}
+
+.promotion-text {
+    max-width: 50%;
+    text-align: center;
+}
+
+.promotion-text h1 {
+    font-size: 2.5em;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.promotion-text h1 span {
+    color: #6d9773;
+}
+
+.promotion-text p {
+    font-size: 1.2em;
+    margin: 10px 0 20px;
+}
+
+.promotion-details {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.detail {
+    text-align: center;
+    margin: 0 10px;
+}
+
+.detail h2 {
+    font-size: 2em;
+    color: #6d9773;
+    margin: 0;
+}
+
+.detail p {
+    margin: 5px 0 0;
+    font-size: 1em;
+}
+
+.promotion-image {
+    max-width: 50%;
+}
+
+.promotion-image img {
+    width: 100%;
+    border-radius: 10px;
+}
